@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <classPathEntry
-            location="E:\work\genlombokcode\src\main\resources\mysql-connector-java-8.0.18.jar" />
+    <!-- 链接 mysql 时打开, postgresql需要屏蔽 -->
+    <!-- <classPathEntry location="E:\work\genlombokcode\src\main\resources\mysql-connector-java-8.0.18.jar" />-->
 
     <!-- defaultModelType 该属性支持三种生成方式：
             1.conditional，默认是这种方式，当一张表只有一个主键时，不会为主键生成单独的实体类，超过一个则会生成单独的主键实体类，BLOB字段仍单独生成实体类。
@@ -27,10 +27,16 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
-        <!--jdbc的数据库连接-->
+        <!--mysql jdbc的数据库连接-->
+<!--        <jdbcConnection-->
+<!--                connectionURL="jdbc:mysql://192.168.1.115:55580/water_db"-->
+<!--                driverClass="com.mysql.cj.jdbc.Driver" password="123456" userId="root">-->
+<!--        </jdbcConnection>-->
+
+        <!-- postgresql数据库连接 -->
         <jdbcConnection
-                connectionURL="jdbc:mysql://192.168.1.115:55580/water_db"
-                driverClass="com.mysql.cj.jdbc.Driver" password="123456" userId="root">
+                connectionURL="jdbc:postgresql://192.168.1.115:55432/platform"
+                driverClass="org.postgresql.Driver" password="Rhzt0322" userId="postgres">
         </jdbcConnection>
 
         <!--非必须，类型处理器，在数据库类型和java类型之间的转换控制-->
@@ -73,8 +79,5 @@
         <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
         <!-- 权限相关表 -->
         <table tableName="biz_acpt" domainObjectName="BizAcceptance" />
-<!--        <table tableName="biz_project_pre_funds" domainObjectName="BizProjectPreFunds" />-->
-<!--        <table tableName="biz_project_pre_work_progress" domainObjectName="BizProjectPreWorkProgress" />-->
-<!--        <table tableName="biz_project_resp_org" domainObjectName="BizProjectRespOrg" />-->
     </context>
 </generatorConfiguration>

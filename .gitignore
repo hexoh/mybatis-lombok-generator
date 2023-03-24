@@ -30,3 +30,14 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### MacOS ###
+.DS_Store
+.DS_Store?
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

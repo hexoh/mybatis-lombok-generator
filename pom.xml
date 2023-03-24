@@ -6,7 +6,7 @@
 	<artifactId>genlombokcode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>genLombokCode</name>
-	<description>生成mysql的LombokCode</description>
+	<description>生成mysql和postgresql的LombokCode</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -69,6 +69,11 @@
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
 						<version>8.0.18</version>
+					</dependency>
+					<dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>42.3.8</version>
 					</dependency>
 					<!-- 通用mapper依赖  假如需要使用通用mapper，放开注释 -->
 					<!--<dependency>
